@@ -21,7 +21,7 @@ steam-collection-parser 123456 12345678 -o "/tmp/temp.txt"
 
 ## Installation
 
-**Must have NodeJS 12.x+ installed**
+**Must have NodeJS 12.x+ installed**   
 run `npm install --global https://github.com/thakyZ/node-steam-collection-parser`
 
 Author: Neko Boi Nick (thakyZ)   
