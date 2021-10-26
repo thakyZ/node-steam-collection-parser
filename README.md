@@ -19,6 +19,11 @@ All parameters and options are required.
 steam-collection-parser 123456 12345678 -o "/tmp/temp.txt"
 ```
 
+## Installation
+
+**Must have NodeJS 12.x+ installed**
+run `npm install --global https://github.com/thakyZ/node-steam-collection-parser`
+
 Author: Neko Boi Nick (thakyZ)   
 License: [MIT](https://github.com/thakyZ/node-nbt-to-json/LICENSE)
 
