@@ -1,0 +1,25 @@
+{
+  "name": "node-steam-collection-parser",
+  "version": "1.0.0",
+  "description": "Parses Steam Workshop Collection Items",
+  "main": "steam-collection-parser.js",
+  "scripts": {
+    "test": "node steam-collection-parser.js"
+  },
+  "bin": {
+    "steam-collection-parser": "steam-collection-parser.js"
+  },
+  "keywords": [
+    "steam",
+    "workshop",
+    "collection",
+    "parser",
+    "web"
+  ],
+  "author": "thakyZ",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "steam-workshop-scraper": "0.0.5"
+  }
+}
