@@ -9,6 +9,10 @@
   "bin": {
     "steam-collection-parser": "steam-collection-parser.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thakyZ/node-steam-collection-parser.git"
+  },
   "keywords": [
     "steam",
     "workshop",
@@ -16,7 +20,7 @@
     "parser",
     "web"
   ],
-  "author": "thakyZ",
+  "author": "Neko Boi Nick",
   "license": "MIT",
   "dependencies": {
     "commander": "^8.3.0",

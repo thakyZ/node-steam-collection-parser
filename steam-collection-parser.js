@@ -1,10 +1,5 @@
 #! /usr/bin/env node
-const {
-  Command,
-  Option,
-  InvalidArgumentError,
-  Argument,
-} = require("commander");
+const { Command, Option, InvalidArgumentError, Argument } = require("commander");
 const SteamWorkshopScraper = require("steam-workshop-scraper");
 const fs = require("fs");
 const path = require("path");
@@ -41,10 +36,7 @@ function _parseInt(value, dummyPrevious) {
 }
 
 program
-  .version(
-    "1.0.0",
-    "Parses Steam Workshop collection and writes collection ids to file"
-  )
+  .version("1.0.0", "Parses Steam Workshop collection and writes collection ids to file")
   .addArgument(
     new Argument("<appid>", "The Steam App ID of the mods")
       .argParser(_parseInt)
@@ -56,10 +48,7 @@ program
       .argRequired()
   )
   .addOption(
-    new Option(
-      "-o, --output <filename>",
-      "The file to output the command line params"
-    )
+    new Option("-o, --output <filename>", "The file to output the command line params")
       .argParser(checkFileOutput)
       .makeOptionMandatory(true)
   )
