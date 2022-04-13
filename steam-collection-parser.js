@@ -3,6 +3,7 @@ const { Command, Option, InvalidArgumentError, Argument } = require("commander")
 const SteamWorkshopScraper = require("steam-workshop-scraper");
 const fs = require("fs");
 const path = require("path");
+const { builtinModules } = require("module");
 
 const program = new Command();
 
@@ -119,5 +120,23 @@ async function parseCollection(appid, workshopid, options) {
     process.exit(0);
   }
 }
+
+/**
+ * cheerioReq
+ * An http request module sending back a Cheerio object.
+ *
+ * You can change the `request` function by overriding the `request` field.
+ *
+ * @name cheerioReq
+ * @function
+ * @param {String} appid The Steam app id for the collection.
+ * @param {String} workshopid The Steam workshop item id.
+ * @param {Boolean} json Whether to return stringified JSON object or steamcmd format
+ * @returns Stringified JSON object or string of SteamCMD commands in text format
+ */
+ module.exports = function parseCollection(appid, workshopid, json) {
+  var steam_collection = await aParseCollection(workshopid);
+  return steam_format(steam_collection, appid, json);
+};
 
 program.parse(process.argsv);

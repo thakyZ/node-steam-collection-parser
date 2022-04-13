@@ -1,6 +1,6 @@
 {
   "name": "node-steam-collection-parser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Parses Steam Workshop Collection Items",
   "main": "steam-collection-parser.js",
   "scripts": {
@@ -11,6 +11,9 @@
   },
   "bin": {
     "steam-collection-parser": "steam-collection-parser.js"
+  },
+  "bugs": {
+    "url": "https://github.com/thakyZ/node-steam-collection-parser/issues"
   },
   "repository": {
     "type": "git",
