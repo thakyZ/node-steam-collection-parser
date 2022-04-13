@@ -1,6 +1,6 @@
 {
   "name": "node-steam-collection-parser",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Parses Steam Workshop Collection Items",
   "main": "steam-collection-parser.js",
   "scripts": {
@@ -30,7 +30,6 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^8.3.0",
-    "node-steam-collection-parser": "github:thakyZ/node-steam-collection-parser",
     "steam-workshop-scraper": "^0.0.5"
   }
 }
