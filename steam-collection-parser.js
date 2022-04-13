@@ -37,7 +37,7 @@ function _parseInt(value, dummyPrevious) {
 }
 
 program
-  .version("1.0.0", "Parses Steam Workshop collection and writes collection ids to file")
+  .version("1.0.4", "Parses Steam Workshop collection and writes collection ids to file")
   .addArgument(
     new Argument("<appid>", "The Steam App ID of the mods")
       .argParser(_parseInt)
