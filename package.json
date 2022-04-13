@@ -1,11 +1,13 @@
 {
   "name": "node-steam-collection-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Parses Steam Workshop Collection Items",
   "main": "steam-collection-parser.js",
   "scripts": {
-    "test": "node steam-collection-parser.js 1416490040",
-    "test-file": "node steam-collection-parser.js 1416490040 -o temp.txt"
+    "test": "node steam-collection-parser.js 211820 729554533",
+    "test-file": "node steam-collection-parser.js 211820 729554533 -o temp.txt",
+    "test-j": "node steam-collection-parser.js 211820 729554533 -j",
+    "test-j-file": "node steam-collection-parser.js 211820 729554533 -o temp.txt -j"
   },
   "bin": {
     "steam-collection-parser": "steam-collection-parser.js"

@@ -50,7 +50,10 @@ program
   .addOption(
     new Option("-o, --output <filename>", "The file to output the command line params")
       .argParser(checkFileOutput)
-      .makeOptionMandatory(true)
+      .makeOptionMandatory(false)
+  )
+  .addOption(
+    new Option("-j, --json", "Output the data to a JSON file")
   )
   .action(parseCollection);
 
@@ -73,20 +76,27 @@ async function aParseCollection(workshopid) {
   }
 }
 
+function steam_format(steam_collection, appid, options) {
+  if (options.json) {
+    return JSON.stringify(steam_collection);
+  } else {
+    let compile = "";
+    for (var _id in steam_collection) {
+      compile = compile + "+workshop_download_item " + appid + " " + steam_collection[_id] + " ";
+    }
+    return compile;
+  }
+}
+
 function write_file(appid, options, data) {
   if (data == undefined) {
     console.warn("[WARN] Data is NULL");
     return false;
   }
-  let compile = "";
-  for (var _id in data) {
-    compile =
-      compile + "+workshop_download_item " + appid + " " + data[_id] + " ";
-  }
   if (fs.existsSync(options.output)) {
     fs.unlinkSync(options.output);
   }
-  fs.writeFileSync(options.output, compile, { flag: "wx" }, (err) => {
+  fs.writeFileSync(options.output, steam_format(data, appid, options), { flag: "wx" }, (err) => {
     if (err) {
       console.error("[FAIL] Failed to write file at: " + options.output, err);
       throw err;
@@ -97,10 +107,16 @@ function write_file(appid, options, data) {
 }
 
 async function parseCollection(appid, workshopid, options) {
-  if (write_file(appid, options, await aParseCollection(workshopid))) {
-    process.exit(0);
+  var steam_collection = await aParseCollection(workshopid);
+  if (options.output != undefined) {
+    if (write_file(appid, options, steam_collection)) {
+      process.exit(0);
+    } else {
+      process.exit(1);
+    }
   } else {
-    process.exit(1);
+    console.log(steam_format(steam_collection, appid, options));
+    process.exit(0);
   }
 }
 
