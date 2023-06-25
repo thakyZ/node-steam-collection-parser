@@ -30,6 +30,6 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^8.3.0",
-    "steam-workshop-scraper": "^0.0.5"
+    "steam-workshop-scraper": "^0.0.7"
   }
 }
